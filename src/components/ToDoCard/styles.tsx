@@ -6,6 +6,7 @@ export const Container = styled.div`
 
   background-color: var(--grey-5);
 
+  width: 100%;
   margin-bottom: 20px;
   border-radius: var(--border-radius);
 `

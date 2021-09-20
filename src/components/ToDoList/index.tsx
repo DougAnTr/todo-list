@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import { DashboardContext } from '../../pages/Dashboard'
 import Button from '../Buttons/Button'
+import { Loading } from '../Loading'
 import ToDoCard from '../ToDoCard'
 
 import { Body, Container, Header, NoTasksLabel } from './styles'
 
 const ToDoList: React.FC = () => {
-  const { toDos, selectedTab, setSelectedTab } = useContext(DashboardContext)
+  const { toDos, isLoadingToDos, selectedTab, setSelectedTab } = useContext(DashboardContext)
 
   return (
     <Container>
@@ -30,6 +31,8 @@ const ToDoList: React.FC = () => {
       {
         toDos.length > 0 ? (
           <Body>
+            {isLoadingToDos && <Loading />}
+
             {toDos.map((toDo) => (
               <ToDoCard 
                 key={toDo.id}
@@ -41,9 +44,7 @@ const ToDoList: React.FC = () => {
               />
             ))}
           </Body>
-        ) : (
-          <NoTasksLabel>No tasks</NoTasksLabel>
-        )
+        ) : !isLoadingToDos && <NoTasksLabel>No tasks</NoTasksLabel>
       }
     </Container>
   )

@@ -40,4 +40,8 @@ export const Body = styled.div`
     top: 16px;
     right: 16px;
   }
+
+  @media (min-width: 608px) {
+    max-width: 576px;
+  }
 `

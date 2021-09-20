@@ -14,12 +14,12 @@ export const GlobalStyle = createGlobalStyle`
 
     /* sizes */
     --border-radius: 20px;
-    --padding: 16px
+    --padding: 16px;
     --button: 163px;
     
 
     @media (min-width: 608px) {
-      --button: 195px
+      --button: 195px;
     }
   }
 

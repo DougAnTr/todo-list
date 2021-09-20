@@ -1,4 +1,4 @@
-describe('Creating a new task', () => {
+describe('Tasks list', () => {
   it('Displays the new to-do in the list', () => {
     cy.visit('http://localhost:3000')
 
@@ -9,6 +9,8 @@ describe('Creating a new task', () => {
       cy.get('textarea').type('to-do description')
       cy.get('[data-testid="saveTaskButton"]').click()
     })
+
+    cy.get('newTaskForm').should('not.exist')
 
     cy.contains('new to-do')
     cy.contains('to-do description')

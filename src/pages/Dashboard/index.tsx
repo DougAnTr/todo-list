@@ -29,7 +29,7 @@ const Dashboard: React.FC = () => {
   const getToDos = useCallback(async () => {
 
     const isClosed = selectedTab === 'closed'
-    const {data} = await api.get(`/todos?isClosed=${isClosed}`)
+    const {data} = await api.get(`/todos?isClosed=${isClosed}&_sort=createdAt&_order=desc`)
 
     setToDos(data)
   }, [selectedTab])

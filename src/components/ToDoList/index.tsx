@@ -28,11 +28,11 @@ const ToDoList: React.FC = () => {
         </Button>
       </Header>
 
+      {isLoadingToDos && <Loading />}
+      
       {
         toDos.length > 0 ? (
           <Body>
-            {isLoadingToDos && <Loading />}
-
             {toDos.map((toDo) => (
               <ToDoCard 
                 key={toDo.id}

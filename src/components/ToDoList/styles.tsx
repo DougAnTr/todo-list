@@ -16,7 +16,11 @@ export const Header = styled.header`
   margin-bottom: 31px;
 
   .button {
-    max-width: 163px;
+    max-width: var(--button);
+  }
+
+  @media (min-width: 608px) {
+    max-width: 410px;
   }
 `
 

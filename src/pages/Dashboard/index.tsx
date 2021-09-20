@@ -5,7 +5,7 @@ import Header from '../../components/Header'
 import ToDoList from '../../components/ToDoList'
 import { ToDo } from '../../interfaces/todo.interface'
 import api from '../../services/api'
-import { Title } from './styles'
+import { Container, Title } from './styles'
 
 type Tabs = 'to-do' | 'closed'
 interface IDashboardContext {
@@ -41,14 +41,16 @@ const Dashboard: React.FC = () => {
 
   return (
     <DashboardContext.Provider value={{toggleModal, toDos, getToDos, selectedTab, setSelectedTab}}>
-      <Header />
+      <Container>
+        <Header />
 
-      <Title>Hi there.</Title>
+        <Title>Hi there.</Title>
 
-      <ToDoList />
-      {showModal && <NewTaskForm />}
+        <ToDoList />
+        {showModal && <NewTaskForm />}
 
-      <Footer />
+        <Footer />
+      </Container>
     </DashboardContext.Provider>
   )
 }

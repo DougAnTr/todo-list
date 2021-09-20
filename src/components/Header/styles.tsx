@@ -16,6 +16,6 @@ export const Container = styled.header`
   }
 
   .button {
-      max-width: 163px;
+      max-width: var(--button);
   }
 `

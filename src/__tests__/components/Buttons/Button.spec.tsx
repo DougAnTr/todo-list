@@ -1,7 +1,7 @@
 import React from 'react'
-import { render } from '../../utils/test'
+import { render } from '../../../utils/test'
 import { RenderResult } from '@testing-library/react'
-import Button from '../../components/Button'
+import Button from '../../../components/Buttons/Button'
 import userEvent from '@testing-library/user-event'
 
 describe('<Button />', () => {

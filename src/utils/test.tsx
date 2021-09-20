@@ -11,5 +11,4 @@ const Providers: React.FC = ({children}) => (
 
 const CustomRender = (ui: ReactElement, options?: Omit<RenderOptions, 'wrapper'>): RenderResult => render(ui, {wrapper: Providers, ...options})
 
-export * from '@testing-library/react'
 export { CustomRender as render }

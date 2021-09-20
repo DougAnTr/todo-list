@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import Icon  from './Icon'
 import { Title } from './Title'
 
 import { Container } from './styles'
-import Button from '../Button'
+import Button from '../Buttons/Button'
+import { DashboardContext } from '../../pages/Dashboard'
 
 const Header: React.FC = () => {
+  const { toggleModal } = useContext(DashboardContext)
+
   return (
     <Container>
       <div className="wrapper">
@@ -14,7 +17,13 @@ const Header: React.FC = () => {
         <Title>tsks.</Title>
       </div>
 
-      <Button onClick={() => console.log('new task')} >New Task</Button>
+      <Button 
+        className="button" 
+        testId="newTaskButton" 
+        onClick={toggleModal} 
+      >
+        New Task
+      </Button>
     </Container>
   )
 }

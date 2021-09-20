@@ -1,13 +1,13 @@
 import React from 'react'
 import { RenderResult } from '@testing-library/react'
 import { render } from '../../utils/test'
-import ListToDo from '../../components/ToDoList'
+import ToDoList from '../../components/ToDoList'
 
 describe('<ListToDo />', () => {
   let component: RenderResult
 
   beforeEach(() => {
-    component = render(<ListToDo />)
+    component = render(<ToDoList />)
   })
 
   it('should render two buttons', () => {

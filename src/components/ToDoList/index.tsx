@@ -7,7 +7,7 @@ import ToDoCard from '../ToDoCard'
 import { Body, Container, Header, NoTasksLabel } from './styles'
 
 const ToDoList: React.FC = () => {
-  const { toDos, isLoadingToDos, selectedTab, setSelectedTab } = useContext(DashboardContext)
+  const { toDos = [], isLoadingToDos, selectedTab, setSelectedTab } = useContext(DashboardContext)
 
   return (
     <Container>
@@ -29,7 +29,7 @@ const ToDoList: React.FC = () => {
       </Header>
 
       {isLoadingToDos && <Loading />}
-      
+
       {
         toDos.length > 0 ? (
           <Body>

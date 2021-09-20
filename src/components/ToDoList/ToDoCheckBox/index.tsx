@@ -24,7 +24,7 @@ const ToDoCheckBox: React.FC<ToDoCheckBoxProps> = ({id, toDoCompleted, isClosed 
   return (
     <Container>
       <input id={id} type="checkbox" disabled={isClosed} checked={checked} onChange={handleOnClick} />
-      <label htmlFor={id}/>
+      <label data-testid="label" htmlFor={id}/>
     </Container>
   )
 }
